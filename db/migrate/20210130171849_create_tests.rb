@@ -1,10 +1,9 @@
 class CreateTests < ActiveRecord::Migration[6.0]
   def change
     create_table :tests do |t|
-      t.primary_key :id
-      t.string :title
-      t.integer :level
-      t.integer :category_id
+      t.string :title, null: false
+      t.integer :level, default: 0
+      t.references :category, index: true
 
       t.timestamps
     end
