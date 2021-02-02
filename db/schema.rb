@@ -28,13 +28,11 @@ ActiveRecord::Schema.define(version: 2021_01_30_180313) do
 
   create_table "replies", force: :cascade do |t|
     t.text "body", null: false
-    t.integer "test_id"
     t.integer "question_id"
     t.boolean "correct", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_replies_on_question_id"
-    t.index ["test_id"], name: "index_replies_on_test_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -52,4 +50,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_180313) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "questions", "tests"
+  add_foreign_key "replies", "questions"
+  add_foreign_key "tests", "categories"
 end
