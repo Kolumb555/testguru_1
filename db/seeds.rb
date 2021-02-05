@@ -6,27 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create(title: 'Frontend')
-Category.create(title: 'Backend')
-Category.create(title: 'Machine Learning')
+categories = Category.create([{title: 'Frontend'}, {title: 'Backend'}, {title: 'Machine Learning'}])
 
-Test.create(title: 'JavaScript', level: 1, category_id: 1)
-Test.create(title: 'Ruby', level: 3, category_id: 2)
-Test.create(title: 'Python', level: 4, category_id: 3)
-Test.create(title: 'CSS', level: 2, category_id: 1)
-Test.create(title: 'React', level: 5, category_id: 1)
+tests = Test.create([{title: 'JavaScript', level: 1, category_id: categories[0].id},
+{title: 'Ruby', level: 3, category_id: categories[1].id},
+{title: 'Python', level: 4, category_id: categories[2].id},
+{title: 'CSS', level: 2, category_id: categories[0].id},
+{title: 'React', level: 5, category_id: categories[0].id}])
 
-Question.create(body:'What is an object?', test_id: 2)
-Question.create(body:'What does self mean?', test_id: 2)
-Question.create(body:'What is a Proc?', test_id: 2)
-Question.create(body:'What does CSS stand for?', test_id: 4)
-Question.create(body:'What is the best way to split a string?', test_id: 3)
+questions = Question.create([{body:'What is an object?', test_id: tests[1].id},
+{body:'What does self mean?', test_id: tests[1].id},
+{body:'What is a Proc?', test_id: tests[1].id},
+{body:'What does CSS stand for?', test_id: tests[3].id},
+{body:'What is the best way to split a string?', test_id: tests[2].id}])
 
-Reply.create(body: 'Object is the parent class of all classes in Ruby', question_id: 1)
-Reply.create(body: 'The keyword self enables to access to the current object', question_id: 2)
-Reply.create(body: 'A Proc object is an encapsulation of a block of code, which can be stored in a local variable', question_id: 3)
-Reply.create(body: 'Cascading style sheets', question_id: 4)
-Reply.create(body: 'Using .split', question_id: 5)
+replies = Reply.create([{body: 'Object is the parent class of all classes in Ruby', question_id: questions[0].id},
+{body: 'The keyword self enables to access to the current object', question_id: questions[1].id},
+{body: 'A Proc object is an encapsulation of a block of code, which can be stored in a local variable', question_id: questions[2].id},
+{body: 'Cascading style sheets', question_id: questions[3].id},
+{body: 'Using .split', question_id: questions[4].id}])
 
-User.create(name: 'Yukihiro Matsumoto')
-User.create(name: 'Guido van Rossum')
+users = User.create([{name: 'Yukihiro Matsumoto'},
+{name: 'Guido van Rossum'}])
