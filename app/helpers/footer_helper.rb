@@ -4,10 +4,10 @@ module FooterHelper
   end
 
   def github_url(author, repo)
-    "https://#{repo}/#{author}"
+    link_to author, "https://#{repo}/#{author}"
   end
 
   def thinknetica_path
-    'https://thinknetica.com'
+    link_to 'thinknetica', 'https://thinknetica.com'
   end
 end
