@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy]
 
+  def edit
+
+  end
+
   def index
 
   end
@@ -14,15 +18,15 @@ class QuestionsController < ApplicationController
   end
 
   def new
-  
+    @question = @test.questions.new
   end
 
   def create
     @question = @test.questions.new(question_params)
 
-  
     if @question.save
       render plain: 'New question was added to database'
+
     else
       render plain: 'Question was not added to database'
     end
@@ -30,6 +34,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    
+    redirect_to tests_path
   end
 
   private
