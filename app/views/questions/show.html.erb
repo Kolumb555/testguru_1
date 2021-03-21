@@ -1,2 +1,11 @@
 <h3>Test <%= @question.test.title %> question <%= @question.id %></h3>
 <p> <%= @question.body %> <p>
+<h2>Replies</h2>
+<%= link_to 'New Reply', new_question_reply_path(@question) %>
+
+<ol>
+<%= render @question.replies %>
+</ol>
+
+<%= link_to 'Edit', edit_question_path(@question) %>
+<%= link_to 'Back', test_path(@question.test) %>

@@ -1,24 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @test_passage.user_id %>
-</p>
+<li>
+  <%= @test_passage.current_question.body %>
+</li>
 
-<p>
-  <strong>Test:</strong>
-  <%= @test_passage.test_id %>
-</p>
-
-<p>
-  <strong>Correct questions:</strong>
-  <%= @test_passage.correct_questions %>
-</p>
-
-<p>
-  <strong>Current questions:</strong>
-  <%= @test_passage.current_questions_id %>
-</p>
-
-<%= link_to 'Edit', edit_test_passage_path(@test_passage) %> |
-<%= link_to 'Back', test_passages_path %>
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :reply_ids, @test_passage.current_question.replies, :id, :body do |b| %>
+  <p>
+    <%= b.check_box id: "reply_ids_#{b.object.id}" %>
+    <%= b.label %>
+  </b>
+  <% end %>
+<% end %>
