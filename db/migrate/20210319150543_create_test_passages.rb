@@ -4,7 +4,7 @@ class CreateTestPassages < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.references :test, null: false, foreign_key: true
       t.integer :correct_questions, default: 0
-      t.references :current_questions, null: false, foreign_key: false
+      t.references :current_question, foreign_key: false
 
       t.timestamps
     end

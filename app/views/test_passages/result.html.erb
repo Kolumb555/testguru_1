@@ -1,0 +1,14 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed.</h1>
+
+<b><%= @test_passage.result_message %></b><br>
+<b>Correct replies: 
+
+<% if @test_passage.test_passed? %>
+  <ins id="success"><%= @test_passage.correct_replies_percent %>%</ins>
+<% else %>
+  <ins id="failed"><%= @test_passage.correct_replies_percent %>%</ins>
+<% end %></b>
+<br>
+<%= link_to 'Tests', tests_path %>
+
+
