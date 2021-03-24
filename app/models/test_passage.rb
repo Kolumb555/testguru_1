@@ -24,14 +24,6 @@ class TestPassage < ApplicationRecord
     (self.correct_questions * 100 / test.questions.count)
   end
 
-  def result_message
-    if correct_replies_percent >= SUCCESS_PERCENT
-      'Test was completed successfully.'
-    else
-      'Test failed.'
-    end
-  end
-
   def test_passed?
     correct_replies_percent >= SUCCESS_PERCENT
   end
