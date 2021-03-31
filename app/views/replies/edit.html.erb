@@ -1,0 +1,6 @@
+<h1>Edit Reply</h1>
+<p>
+<%= @reply.question.body %>
+</p>
+<%= render 'form' %>
+<% link_to 'Back', question_path(@reply.question) %>

@@ -1,0 +1,8 @@
+<h1>Question</h1>
+<p><%= @reply.question.body %></p>
+<b>Reply:</b>
+<%= @reply.body %>
+<p><b>Correct:</b></p>
+<%= @reply.correct %><br>
+<br>
+<%= link_to 'Back', question_path(@reply.question) %>
