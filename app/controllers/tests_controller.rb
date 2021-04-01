@@ -3,7 +3,6 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   before_action :set_test, only: %i[show destroy edit update start]
-  #before_action :set_user, only: :start
 
   def index
     @tests = Test.all
@@ -64,9 +63,5 @@ class TestsController < ApplicationController
   def set_test
     @test = Test.find(params[:id])
   end
-
-  # def set_user
-  #   @user = current_user
-  # end
 
 end
