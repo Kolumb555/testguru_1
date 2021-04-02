@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
 
   skip_before_action :authenticate_user!
 
-  helper_method :flash_message
-
   def new
 
   end
@@ -16,18 +14,14 @@ class SessionsController < ApplicationController
       redirect_to cookies[:desired_path] || root_path
     
     else
-      flash_message('Are you a Guru? Verify your Email and Password please')
+      flash[:alert] = 'Are you a Guru? Verify your Email and Password please'
       render :new
     end
   end
 
-  def flash_message(message)
-    flash[:alert] = message
-  end
-
   def destroy
+    cookies.delete(:desired_path)
     session.delete(:user_id)
-    cookies.delete(:user_id)
     redirect_to tests_path
   end
 end

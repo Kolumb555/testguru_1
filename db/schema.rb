@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_155039) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
     t.string "password_digest"
-    t.index ["email"], name: "email_index"
+    t.index ["email"], name: "email_index", unique: true
   end
 
   add_foreign_key "questions", "tests"
