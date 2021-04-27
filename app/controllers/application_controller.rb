@@ -1,10 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :authenticate_user!
+
+  private
+
+    def sign_up_params
+      params.require(:user).permit(:email, :password, :name)
+    end
+
+  # helper_method :users, :name, :name
+
   # helper_method :current_user,
   #               :logged_in?
-
-  # before_action :authenticate_user!
 
   # private
 
