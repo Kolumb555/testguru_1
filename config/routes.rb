@@ -22,9 +22,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tests
-    resources :questions
-    resources :replies
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :replies, shallow: true, except: :index
+      end
+    end
   end
 
 end
