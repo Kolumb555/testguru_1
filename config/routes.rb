@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
               controllers: { registrations: 'users/registrations' }
 
-  #delete :sessions, to: 'sessions#destroy'
-
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :replies, shallow: true, except: :index
@@ -25,6 +23,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tests
+    resources :questions
+    resources :replies
   end
 
 end

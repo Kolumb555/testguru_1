@@ -18,9 +18,10 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
+    @test.author_id = current_user.id
 
     if @test.save
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :new
     end
@@ -29,7 +30,7 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
 
-    redirect_to tests_path
+    redirect_to admin_tests_path
   end
 
   def edit
@@ -44,7 +45,7 @@ class Admin::TestsController < Admin::BaseController
   def update
 
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :edit
     end
@@ -53,7 +54,7 @@ class Admin::TestsController < Admin::BaseController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :author_id, :category_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def rescue_with_test_not_found
