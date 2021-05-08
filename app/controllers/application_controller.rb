@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def admin?
+    self.is_a?(Admin)
+  end
+
   private
 
 end
