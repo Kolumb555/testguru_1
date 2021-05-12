@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel | Testguru</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="nav user"><%= link_to 'TestGuru Project', root_path %>
+    <%= link_to 'Logout', destroy_session_path(current_user), method: :delete %></p>
+    <%= render 'admin/nav'%>
+    <%= render 'shared/flash'%>
+
+    <%= yield %>
+  </body>
+
+<%= render 'shared/footer'%>
+</html>
