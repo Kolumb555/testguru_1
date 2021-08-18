@@ -1,13 +1,13 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed.</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<b>Correct replies: 
+<b><%= t('.correct replies') %>
 
 <% if @test_passage.test_passed? %>
   <ins id="success"><%= @test_passage.correct_replies_percent %>%</ins><br>
-  <b>Test was completed successfully.</b>
+  <b><%= t('.successfully') %></b>
 <% else %>
   <ins id="failed"><%= @test_passage.correct_replies_percent %>%</ins><br>
-  <b>Test failed.</b>
+  <b><%= t('.failed') %></b>
 <% end %></b>
 <br>
-<%= link_to 'Tests', tests_path %>
+<%= link_to t('.tests'), tests_path %>
