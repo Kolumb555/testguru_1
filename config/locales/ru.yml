@@ -19,7 +19,7 @@ ru:
   admin:
     tests:
       create:
-        success: "Тест успешно создан." #Test was successfully created
+        success: "Тест успешно создан."
       index:
         header: "Доступные Тесты"
         new test: "Новый тест"
@@ -59,9 +59,6 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
 
-        #one: "%{count} error detected"
-        #other: "%{count} errors detected"
-
   tests:
     index:
       header: "Доступные Тесты"
@@ -74,18 +71,18 @@ ru:
 
   test_passages:
     show:
-      passing: "Прохождение теста по" #Passing the Test
+      passing: "Прохождение теста по"
       question: "Вопрос"
       of: "из"
       next: "Следующий"
     
     result:
-      header: "Тест %{title} успешно завершен!" #The %{title} Test was Completed!.
+      header: "Тест %{title} успешно завершен!"
       correct replies: "Верные ответы:"
-      successfully: "Тест удачно завершен" #Test was completed successfully.
+      successfully: "Тест удачно завершен"
       failed: "Тест не пройден."
       tests: "Тесты"
 
   tests_mailer:
     completed_test:
-      subject: "Вы успешно завершили тест на TestGuru!" #"You just completed the TestGuru test!"
+      subject: "Вы успешно завершили тест на TestGuru!"
