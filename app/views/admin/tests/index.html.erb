@@ -1,12 +1,12 @@
-<h1><%= t('.header') %></h1>
-<p>
+<h1 class="mt-2 ml-2"><%= t('.header') %></h1>
+<button type="button" class="btn btn-outline-primary mt-2 ml-2">
 <%= link_to t('.new test'), new_admin_test_path %>
-</p>
-<table>
-<tr>
+</button>
+<table class="table mt-3">
+<tr class="table table-active">
   <th><%= t('.title') %></th>
-  <th><%= t('.number of questions') %></th>
-  <th colspan="3"><%= t('.actions') %></th>
+  <th ><%= t('.number of questions') %></th>
+  <th colspan="3" style="text-align: center !important;"><%= t('.actions') %></th>
 </tr>
 <%= render @tests %>
 </table>

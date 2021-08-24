@@ -71,7 +71,7 @@ ru:
 
   test_passages:
     show:
-      passing: "Прохождение теста по"
+      passing: "Прохождение теста по %{title}"
       question: "Вопрос"
       of: "из"
       next: "Следующий"
