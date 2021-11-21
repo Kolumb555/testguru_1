@@ -26,6 +26,7 @@ ru:
         title: "Название"
         number of questions: "Количество вопросов"
         actions: "Действия"
+        gists: "Созданные gist"
 
       new:
         create new test: "Создать новый тест"
@@ -48,8 +49,18 @@ ru:
       form:
         tests: "Тесты"
 
+    gists:
+      index:
+        header: "Созданные gist"
+        question: "Вопрос"
+        gist_url: "Ссылка"
+        user: "Пользователь"
+        tests: "Тесты"
+
     questions:
       tests: "Тесты"
+
+  description: "Вопрос на тему %{title} от TestGuru"
 
   shared:
     errors:
@@ -82,6 +93,10 @@ ru:
       successfully: "Тест удачно завершен"
       failed: "Тест не пройден."
       tests: "Тесты"
+
+    gist:
+      success: "Gist успешно сохранен! Ссылка на созданный gist: %{url}"
+      failure: "Во время сохранения gist возникла ошибка"
 
   tests_mailer:
     completed_test:

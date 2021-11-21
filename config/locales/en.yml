@@ -26,6 +26,7 @@ en:
         title: "Title"
         number of questions: "Number of questions"
         actions: "Actions"
+        gists: "List of gists"
 
       new:
         create new test: "Create new test"
@@ -48,8 +49,18 @@ en:
       form:
         tests: "Tests"
 
+      gists:
+        index:
+        header: "List of gists"  
+        question: "Question"
+        gist_url: "Link"
+        user: "User"
+        tests: "Tests"
+
     questions:
       tests: "Tests"
+
+  description: "A question about %{title} from TestGuru"
 
   shared:
     errors:
@@ -80,6 +91,10 @@ en:
       successfully: "Test was completed successfully."
       failed: "Test failed."
       tests: "Tests"
+
+    gist:
+      success: "Gist was successfully created! Link to the gist created: %{url}"
+      failurs: "An error occured while saving gist"
 
   tests_mailer:
     completed_test:
