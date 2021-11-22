@@ -1,0 +1,13 @@
+<h1 class="mt-2 ml-2"><%= t('.header') %></h1>
+
+<table class="table mt-3">
+<tr class="table table-active">
+  <th><%= t('.question') %></th>
+  <th ><%= t('.gist_url') %></th>
+  <th ><%= t('.user') %></th>
+</tr>
+
+<%= render @gists %>
+</table>
+
+<p class="mb-5"><%= link_to t('.tests'), admin_tests_path %></p>
