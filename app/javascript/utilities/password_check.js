@@ -17,12 +17,12 @@ function password_match_check () {
   if (password_confirmation_input === '') {
     document.querySelector('.password_match').classList.add('hide')
     document.querySelector('.password_not_match').classList.add('hide')
+    return
   } 
   
-  else if (password_input === password_confirmation_input) {
+  if (password_input === password_confirmation_input) {
     document.querySelector('.password_match').classList.remove('hide')
     document.querySelector('.password_not_match').classList.add('hide')
-
   } else {
     document.querySelector('.password_match').classList.add('hide')
     document.querySelector('.password_not_match').classList.remove('hide')
