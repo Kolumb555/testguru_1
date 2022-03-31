@@ -13,8 +13,10 @@
     <%= f.text_field :name, autofocus: true %>
   </div>
 
+
   <div class="field">
     <%= f.label :password %>
+    <% %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -24,6 +26,17 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+
+    <div class="wrapper">
+      <div class="password_match hide">
+        <%= octicon 'check' %>
+        Passwords match
+      </div>
+      <div class="password_not_match hide">
+        <%= octicon 'x-circle-fill' %>
+        Passwords don't match
+      </div>
+    </div>
   </div>
 
   <div class="actions">
