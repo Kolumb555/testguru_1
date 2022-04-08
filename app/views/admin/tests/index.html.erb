@@ -2,6 +2,9 @@
 <button type="button" class="btn btn-outline-primary mt-2 ml-2">
 <%= link_to t('.new test'), new_admin_test_path %>
 </button>
+
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table mt-3">
 <tr class="table table-active">
   <th><%= t('.title') %></th>

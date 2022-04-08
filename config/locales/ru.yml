@@ -27,6 +27,8 @@ ru:
         number of questions: "Количество вопросов"
         actions: "Действия"
         gists: "Созданные gist"
+      form_inline:
+        submit: "OK"
 
       new:
         create new test: "Создать новый тест"

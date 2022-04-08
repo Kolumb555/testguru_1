@@ -27,6 +27,8 @@ en:
         number of questions: "Number of questions"
         actions: "Actions"
         gists: "List of gists"
+      form_inline:
+        submit: "OK"
 
       new:
         create new test: "Create new test"

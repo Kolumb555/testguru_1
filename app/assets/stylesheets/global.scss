@@ -17,3 +17,15 @@
 .password_not_match {
   color: #e34c1e;
 }
+
+#myProgress {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(202, 199, 199);
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
