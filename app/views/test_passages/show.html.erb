@@ -1,4 +1,13 @@
 <h1><%= t('.passing', title: @test_passage.test.title) %></h1>
+
+<div id="myProgress">
+  <%= content_tag :div, "",
+      class: 'progress-bar',
+      id: "myBar",
+      data: { question_num: @test_passage.question_number,
+              questions_qty: @test_passage.questions_qty }  %>
+</div>
+
 <small class="font-italic"><%= t('.question') %> <%= @test_passage.question_number %> <%= t('.of') %>
 <%= @test_passage.questions_qty %></small><br>
 

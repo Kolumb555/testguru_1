@@ -2,10 +2,11 @@ class Admin::TestsController < Admin::BaseController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  before_action :set_test, only: %i[show destroy edit update]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[show destroy edit update update_inline]
 
   def index
-    @tests = Test.all
+    
   end
 
   def show
@@ -24,6 +25,14 @@ class Admin::TestsController < Admin::BaseController
       redirect_to [:admin, @test], notice: t('.success')
     else
       render :new
+    end
+  end
+
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
     end
   end
 
@@ -47,6 +56,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   private
+
+  def set_tests
+    @tests = Test.all
+  end
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
