@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = Category.create([{title: 'Frontend'}, {title: 'Backend'}, {title: 'Machine Learning'}])
+categories = Category.create!([{title: 'Frontend'}, {title: 'Backend'}, {title: 'Machine Learning'}])
 
-users = User.create([{name: 'Yukihiro Matsumoto', email: 'yuki@gmail.com'},
-{name: 'Guido van Rossum', email: 'gvr@yahoo.com'}])
+users = User.create!([{name: 'Yukihiro', last_name: 'Matsumoto', email: 'yuki@gmail.com', password: '1234qwer'},
+{name: 'Guido', last_name: 'Rossum', email: 'gvr@yahoo.com', password: '4321rewq'}])
 
-tests = Test.create([{title: 'JavaScript', level: 1, category_id: categories[0].id, author_id: users[0].id},
+tests = Test.create!([{title: 'JavaScript', level: 1, category_id: categories[0].id, author_id: users[0].id},
 {title: 'Ruby', level: 3, category_id: categories[1].id, author_id: users[0].id},
 {title: 'Python', level: 4, category_id: categories[2].id, author_id: users[0].id},
 {title: 'CSS', level: 2, category_id: categories[0].id, author_id: users[1].id},

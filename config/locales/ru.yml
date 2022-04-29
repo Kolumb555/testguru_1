@@ -103,3 +103,19 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  feedbacks:
+    new:
+      header: "Форма обратной связи"
+      message: "Пожалуйста, оставьте нам отзыв."
+      tests: "Тесты"
+
+    form:
+      subject: "Тема"
+      comment: "Сообщение"
+      send: "Отправить"
+
+    create:
+      success: "Сообщение успешно отправлено"
+
+      
