@@ -82,6 +82,10 @@ ru:
     test:
       start: "Начать"
 
+    start:
+      no_questions: "Данный тест не содержит вопросов"
+
+
   test_passages:
     show:
       passing: "Прохождение теста по %{title}"

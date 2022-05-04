@@ -80,6 +80,9 @@ en:
     test:
       start: "Start"
 
+    start:
+      no_questions: "This test doesn't have any questions"
+
   test_passages:
     show:
       passing: "Passing the %{title} Test"

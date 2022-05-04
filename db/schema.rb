@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2022_04_25_141222) do
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "author_id"
+    t.bigint "author_id"
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
@@ -101,17 +101,18 @@ ActiveRecord::Schema.define(version: 2022_04_25_141222) do
     t.string "type", default: "User", null: false
     t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "email_index", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["type"], name: "index_users_on_type"
   end
 
   add_foreign_key "feedbacks", "users"
-  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "questions", on_delete: :cascade
   add_foreign_key "gists", "users"
-  add_foreign_key "questions", "tests"
-  add_foreign_key "replies", "questions"
-  add_foreign_key "test_passages", "tests"
+  add_foreign_key "questions", "tests", on_delete: :cascade
+  add_foreign_key "replies", "questions", on_delete: :cascade
+  add_foreign_key "test_passages", "tests", on_delete: :cascade
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
