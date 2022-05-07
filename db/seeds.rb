@@ -12,9 +12,9 @@ users = User.create!([{ name: 'Yukihiro', last_name: 'Matsumoto', email: 'yuki@g
 { name: 'Guido', last_name: 'Rossum', email: 'gvr@yahoo.com', password: '4321rewq' }])
 
 tests = Test.create!([
-  { title: 'JavaScript', level: 1, category_id: categories[0].id, author_id: users[0].id },
-  { title: 'Ruby', level: 3, category_id: categories[1].id, author_id: users[0].id },
-  { title: 'Python', level: 4, category_id: categories[2].id, author_id: users[0].id },
+  { title: 'JavaScript', level: 1, category_id: categories[0].id, author_id: users[0].id, public: true },
+  { title: 'Ruby', level: 3, category_id: categories[1].id, author_id: users[0].id, public: true },
+  { title: 'Python', level: 4, category_id: categories[2].id, author_id: users[0].id, public: true },
   { title: 'CSS', level: 2, category_id: categories[0].id, author_id: users[1].id },
   { title: 'React', level: 5, category_id: categories[0].id, author_id: users[1].id }])
 

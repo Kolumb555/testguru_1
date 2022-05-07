@@ -15,6 +15,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        public: "Публиковать"
 
   admin:
     tests:
@@ -27,6 +28,7 @@ ru:
         number of questions: "Количество вопросов"
         actions: "Действия"
         gists: "Созданные gist"
+        status: "Статус"
       form_inline:
         submit: "OK"
 
@@ -38,6 +40,9 @@ ru:
         edit: "Редактирование"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
+        true: "Опубликован"
+        false: "Не опубликован"
+        
 
       show:
         test: "Тест"
@@ -85,7 +90,6 @@ ru:
     start:
       no_questions: "Данный тест не содержит вопросов"
 
-
   test_passages:
     show:
       passing: "Прохождение теста по %{title}"
@@ -121,5 +125,3 @@ ru:
 
     create:
       success: "Сообщение успешно отправлено"
-
-      
