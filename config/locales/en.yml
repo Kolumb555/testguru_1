@@ -15,7 +15,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
-
+        public: "Publish"
   admin:
     tests:
       create:
@@ -27,6 +27,7 @@ en:
         number of questions: "Number of questions"
         actions: "Actions"
         gists: "List of gists"
+        status: "Status"
       form_inline:
         submit: "OK"
 
@@ -38,6 +39,8 @@ en:
         edit: "Edit"
         delete: "Delete"
         are_you_sure: "Are you sure?"
+        true: "Published"
+        false: "Not published"
 
       show:
         test: "Test"
@@ -80,6 +83,9 @@ en:
     test:
       start: "Start"
 
+    start:
+      no_questions: "This test doesn't have any questions"
+
   test_passages:
     show:
       passing: "Passing the %{title} Test"
@@ -101,3 +107,18 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  feedbacks:
+    new:
+      header: "Feedback"
+      message: "Please leave us feedback, it's really appreciated."
+      tests: "Tests"
+
+    form:
+      subject: "Subject"
+      comment: "Comment"
+      send: "Send"
+
+    create:
+      success: "The feedback succesfully sent"
+      

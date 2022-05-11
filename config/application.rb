@@ -5,8 +5,11 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+# if ['development', 'test'].include? ENV['RAILS_ENV'] #for heroku
+#   Dotenv::Railtie.load
+# end
 
-Dotenv::Railtie.load
+# Dotenv::Railtie.load
 
 module Testguru
   class Application < Rails::Application

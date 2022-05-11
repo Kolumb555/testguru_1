@@ -5,13 +5,17 @@
 </td>
 
 <td class="align-middle"><%= test.questions.count %></td>
+
 <td class="align-middle"><%= link_to t('.show'), admin_test_path(test) %></td>
 <td class="align-middle">
   <%= link_to t('.edit'), 
-                edit_admin_test_path(test),
-                data: { test_id: test.id },
-                class: 'form-inline-link' %>
+                edit_admin_test_path(test)%>
+                <%# # data: { test_id: test.id },
+                # class: 'form-inline-link'  %>
+                
 </td>
 <td class="align-middle"><%= link_to t('.delete'), admin_test_path(test),
         method: :delete, data: { confirm: t('.are_you_sure') } %></td>
+
+<td class="align-middle"><%= t(".#{test.public}") %></td>
 </tr>

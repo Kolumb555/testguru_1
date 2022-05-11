@@ -43,7 +43,9 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_reply?(reply_ids)
-    correct_replies.ids.sort == reply_ids.map(&:to_i).sort
+    if reply_ids
+      correct_replies.ids.sort == reply_ids.map(&:to_i).sort
+    end
   end
 
   def correct_replies
