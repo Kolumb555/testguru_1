@@ -16,6 +16,7 @@ class TestPassage < ApplicationRecord
     if correct_reply?(reply_ids)
       self.correct_questions += 1
     end
+    self.passed = test_passed?
 
     save!
   end

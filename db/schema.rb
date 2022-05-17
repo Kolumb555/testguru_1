@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_05_143634) do
+ActiveRecord::Schema.define(version: 2022_05_16_173044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "awards", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_awards_on_badge_id"
+    t.index ["user_id"], name: "index_awards_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "image_url"
+    t.string "rule"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
@@ -62,6 +79,7 @@ ActiveRecord::Schema.define(version: 2022_05_05_143634) do
     t.integer "current_question_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "passed", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -108,6 +126,8 @@ ActiveRecord::Schema.define(version: 2022_05_05_143634) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "awards", "badges"
+  add_foreign_key "awards", "users"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"

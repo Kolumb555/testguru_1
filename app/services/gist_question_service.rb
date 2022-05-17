@@ -15,7 +15,6 @@ class GistQuestionService
     @client.last_response.status == 200 || 201
   end
 
-
   private
 
   def gist_params
