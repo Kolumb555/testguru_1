@@ -1,6 +1,18 @@
-<h5><%= t('.title') %> <%= @badge.title %> </h3>
-<h5><%= t('.image_url') %> <%= @badge.image_url %> </h3>
-<h5><%= t('.rule') %> <%= @badge.rule %> </h3>
+<h5><%= t('.title') %> <%= @badge.title %> </h5>
+<h5><%= t('.image_url') %> <%= @badge.image_url %> </h5>
+<h5><%= t('.rule') %> <%= @badge.rule %> </h5>
+<h5>
+  <%= t('.rule_option') %>
+  <% if !@badge.rule_option %>
+    <%= t('.no_option_specified') %>
+  <% else %>
+    <% if @badge.rule == 'category' %>
+      <%= Category.find_by(id: @badge.rule_option).title %>
+    <% elsif @badge.rule == 'level' %>
+    <%= @badge.rule_option %>
+      <% end %>
+  <% end %>
+</h5>
 
 <%= link_to t('.tests'), admin_tests_path %>
 <%= link_to t('.badges'), admin_badges_path %>

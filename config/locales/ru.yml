@@ -73,13 +73,20 @@ ru:
         new_badge: "Новый бэйдж"
         title: "Название"
         image_url: "URL с изображением"
+        rule: "Правило"
         actions: "Действия"
         tests: "Тесты"
+        are_you_sure: "Вы уверены?"
+
       badge:
         show: "Просмотр"
         edit: "Редактирование"
         delete: "Удалить"
         are_you_sure: "Вы уверены?"
+        level: "Все тесты уровня"
+        category: "Все тесты категории"
+        first_try: "Прохождение с первой попытки"
+
       new:
         create_new_badge: "Создание нового бэйджа"
         title: "Название"
@@ -92,6 +99,8 @@ ru:
         all_of_category: "Все тесты категории"
         first_try: "Прохождение с первой попытки"
         all_of_level: "Все тесты уровня"
+        level_option: "Уровень:"
+        category_option: "Категория:"
         tests: "Тесты"
 
       create:
@@ -100,8 +109,11 @@ ru:
         title: "Название:"
         image_url: "URL с изображением:"
         rule: "Правило:"
+        rule_option: "Параметр:"
         tests: "Тесты"
         badges: "Бэйджи"
+        no_option_specified: "Правило не обозначено"
+
 
   description: "Вопрос на тему %{title} от TestGuru"
 
