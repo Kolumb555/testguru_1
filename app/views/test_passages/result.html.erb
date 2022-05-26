@@ -2,12 +2,15 @@
 
 <b><%= t('.correct replies') %>
 
-<% if @test_passage.test_passed? %>
+<% if @test_passage.passed? %>
   <ins id="success"><%= @test_passage.correct_replies_percent %>%</ins><br>
   <b><%= t('.successfully') %></b>
 <% else %>
   <ins id="failed"><%= @test_passage.correct_replies_percent %>%</ins><br>
   <b><%= t('.failed') %></b>
+  <% if @test_passage.time_is_up? %>
+    <b><%= t('.time_is_up')  %></b>
+  <% end %>
 <% end %></b>
 <br>
 <%= link_to t('.tests'), tests_path %>

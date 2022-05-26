@@ -9,17 +9,16 @@ document.addEventListener('turbolinks:load', function() {
   function show_options() {
     
     let rule_chosen = document.querySelector('#badge_rule').value
+    let rule_options = document.querySelectorAll('.rule_option')
 
-    if (rule_chosen === "category") {
-      document.querySelector('.category_rule').classList.remove('hide')
-      document.querySelector('.level_rule').classList.add('hide')
-    } else if (rule_chosen === "level") {
-      document.querySelector('.category_rule').classList.add('hide')
-      document.querySelector('.level_rule').classList.remove('hide')
-    } else {
-      document.querySelector('.category_rule').classList.add('hide')
-      document.querySelector('.level_rule').classList.add('hide')
+    if (rule_options.length) {
+      for (var i = 0; i < rule_options.length; i++) {
+        rule_options[i].classList.add('hide')
+      }
+     
+    if (document.querySelector('#'+rule_chosen+'_rule')) {
+      document.querySelector(('#'+rule_chosen+'_rule').toString()).classList.remove('hide')
+      }
     }
   }
 })
-

@@ -16,6 +16,7 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         public: "Публиковать"
+        timer: "Таймер"
 
   admin:
     tests:
@@ -30,6 +31,8 @@ ru:
         gists: "Созданные gist"
         badges: "Созданные бэйджи"
         status: "Статус"
+        timer: "Таймер (минуты)"
+
       form_inline:
         submit: "OK"
 
@@ -145,13 +148,15 @@ ru:
       question: "Вопрос"
       of: "из"
       next: "Следующий"
-    
+      time_left: "Оставшееся время"
+
     result:
       header: "Тест %{title} успешно завершен!"
       correct replies: "Верные ответы:"
       successfully: "Тест удачно завершен"
       failed: "Тест не пройден."
       tests: "Тесты"
+      time_is_up: "Время вышло."
 
     gist:
       success: "Gist успешно сохранен! Ссылка на созданный gist: %{url}"
