@@ -1,0 +1,33 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <p>
+    <%= form.label t('.title') %><br>
+    <%= form.text_field :title, id: :badge_title %>
+  </p>
+
+  <p>
+    <%= form.label t('.image_url') %><br>
+    <%= form.text_field :image_url, id: :image_url %>
+  </p>
+
+  <p>
+    <%= form.label t('.rule') %><br>
+    <%= form.select :rule, [[t('.first_try'), 'first_try'], [t('.all_of_category'), 'category'], [t('.all_of_level'), 'level']] %>
+  </p>
+
+  <p class='hide category_rule'>
+    <%= form.label t('.category_option') %><br>
+    <%= form.collection_select :rule_option, Category.all, :id, :title, prompt: true %><br>
+  </p>
+
+  <p class='hide level_rule'>
+    <%= form.label t('.level_option') %><br>
+    <%= form.select :rule_option, (1..20) %>
+  </p>
+
+  <p><%= form.submit %></p>
+
+<% end %>
+
+<%= render 'shared/errors', resource: @badge %>
+  
+<%= link_to t('.tests'), admin_tests_path %>

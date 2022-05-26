@@ -27,6 +27,7 @@ en:
         number of questions: "Number of questions"
         actions: "Actions"
         gists: "List of gists"
+        badges: "Badges"
         status: "Status"
       form_inline:
         submit: "OK"
@@ -62,8 +63,52 @@ en:
         user: "User"
         tests: "Tests"
 
-    questions:
-      tests: "Tests"
+      questions:
+        tests: "Tests"
+
+    badges:
+      index:
+        header: "Obtained badges"
+        new_badge: "New badge"
+        title: "Title"
+        image_url: "Image URL"
+        rule: "Rule"
+        actions: "Actions"
+        tests: "Tests"
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        category: "All tests of category"
+        first_try: "Passed with first attempt"
+        level: "All tests of level"
+        are_you_sure: "Are you sure?"
+      new:
+        create_new_badge: "Create new badge"
+        title: "Title"
+        image_url: "Image URL"
+        rule: "Rule"
+      form:
+        title: "Title"
+        image_url: "Image URL"
+        rule: "Rule"
+        all_of_category: "All tests of category"
+        first_try: "Passed with first attempt"
+        all_of_level: "All tests of level"
+        rule_option: "Option"
+        category_option: "Category"
+        level_option: "Level"
+        tests: "Tests"
+
+      create:
+        success: "Badge successfully created"
+      show:
+        title: "Title"
+        image_url: "Image URL"
+        rule: "Rule"
+        tests: "Tests"
+        rule_option: "Option"
+        no_option_specified: "No option specified"
 
   description: "A question about %{title} from TestGuru"
 
@@ -79,6 +124,7 @@ en:
       title: "Title"
       number of questions: "Number of questions"
       actions: "Actions"
+      badges: "Badges"
 
     test:
       start: "Start"
@@ -121,4 +167,12 @@ en:
 
     create:
       success: "The feedback succesfully sent"
-      
+
+  badges:
+    index:
+      header: "Obtained badges"
+      title: "Title"
+      image_url: "Image URL"
+      rule: "Badge's rule"
+      tests: "Tests"
+      header_all: "All available badges"

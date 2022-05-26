@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :feedbacks, only: %i[new create]
+  resources :badges
 
   namespace :admin do
     resources :tests do
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
     end
     resources :gists
     resources :questions
+    resources :badges
 
   end
 

@@ -29,7 +29,9 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:reply_ids])
 
     if @test_passage.completed?
+      @test_passage.test_passage_passed?
       TestsMailer.completed_test(@test_passage).deliver_now
+      @badges = AwardGiveService.new(@test_passage).call if @test_passage.passed?
       redirect_to result_test_passage_path(@test_passage)
     else
     render :show

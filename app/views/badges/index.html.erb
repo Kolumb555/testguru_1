@@ -1,0 +1,27 @@
+<h1 class="mt-2 ml-2"><%= t('.header') %></h1>
+
+<table class="table mt-3">
+  <tr class="table table-active">
+    <th><%= t('.title') %></th>
+    <th ><%= t('.image_url') %></th>
+    <th><%= t('.rule') %></th>
+  </tr>
+
+  <%= render @user_badges %>
+
+</table>
+
+<h1 class="mt-2 ml-2"><%= t('.header_all') %></h1>
+
+<table class="table mt-3">
+  <tr class="table table-active">
+    <th><%= t('.title') %></th>
+    <th ><%= t('.image_url') %></th>
+    <th><%= t('.rule') %></th>
+  </tr>
+
+  <%= render @all_badges %>
+
+</table>
+
+<p class="mb-5"><%= link_to t('.tests'), tests_path %></p>
