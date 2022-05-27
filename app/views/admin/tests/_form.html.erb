@@ -18,6 +18,11 @@
   <%= form.check_box :public, id: :public %>
 </p>
 
+<p>
+  <%= form.label :timer %><br>
+  <%= form.select :timer, (1..60) %>
+</p>
+
 <p><%= form.submit %></p>
 
 <% end %>

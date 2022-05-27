@@ -30,7 +30,8 @@ class TestPassage < ApplicationRecord
   end
 
   def test_passed?
-    correct_replies_percent >= SUCCESS_PERCENT
+    return correct_replies_percent >= SUCCESS_PERCENT if test.timer == 0
+    correct_replies_percent >= SUCCESS_PERCENT && (deadline > Time.now)
   end
 
   def question_number
@@ -39,6 +40,20 @@ class TestPassage < ApplicationRecord
 
   def questions_qty
     test.questions.count
+  end
+
+  def time_left
+    self.created_at + (test.timer * 60).seconds - Time.now
+    # Time.at(self.created_at + (test.timer * 60).seconds - Time.now).utc
+  end
+  
+  def deadline
+    self.created_at + test.timer.minute
+  end
+
+  def time_is_up?
+    return false if test.timer == 0
+    deadline.past?
   end
 
   private
@@ -54,7 +69,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_replies
-    current_question.replies.right
+    current_question.replies.right if current_question
   end
 
   def before_validation_set_next_question

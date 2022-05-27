@@ -16,6 +16,8 @@ en:
         level: "Level"
         category_id: "Category"
         public: "Publish"
+        timer: "Timer"
+
   admin:
     tests:
       create:
@@ -29,6 +31,7 @@ en:
         gists: "List of gists"
         badges: "Badges"
         status: "Status"
+        timer: "Timer (minutes)"
       form_inline:
         submit: "OK"
 
@@ -138,6 +141,7 @@ en:
       question: "Question"
       of: "of"
       next: "Next"
+      time_left: "Time left"
     
     result:
       header: "The %{title} Test was Completed!"
@@ -145,6 +149,7 @@ en:
       successfully: "Test was completed successfully."
       failed: "Test failed."
       tests: "Tests"
+      time_is_up: "Time is up."
 
     gist:
       success: "Gist was successfully created! Link to the gist created: %{url}"
